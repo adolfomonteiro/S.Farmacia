@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    text-align: center;
+    color: #00bbff;
+    font-size: 30px;
+    font-weight: 100;
+}
+table{
+    border-collapse: collapse;
+    margin: auto;
+    max-width: 900px;
+    width: 600px;
+    border: 1px solid #00bbff;
+    height: 70px;
+    font-size: 18px;
+}
+th{
+    font-weight: 100;
+    color: #00bbff;
+}
+td{
+    text-align: center;
+    background-color: whitesmoke;
+}

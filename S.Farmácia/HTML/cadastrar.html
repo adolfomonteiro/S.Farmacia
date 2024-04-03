@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/inspetor_icon.svg" type="image/x-icon">
+    <title>Funcionários</title>
+</head>
+<link rel="stylesheet" href="../CSS/cadastrar.css">
+<body>
+    <div id="main"></div>
+    <div id="card">
+        <button id="logo">
+            <img src="img/inspetor_icon.svg" width="60" height="60" alt="">
+        </button>
+        <h3>Farmácia</h3>
+        <h4>Criar Conta</h4>
+        <h5 id="erro"></h5>
+        <input required type="email" placeholder="✉  Email" id="email">
+       <h5 id="erro_email"></h5>
+        <input required type="text" placeholder="Nome" id="nome">
+        <h5 id="erro_nome"></h5>
+        <input required type="tel" placeholder="Telefone" id="telefone">
+       <h5 id="erro_telefone"></h5>
+        <input required type="password" placeholder="⚙  Senha" id="password">
+        <h5 id="erro_password"></h5>
+        <button id="next" onclick="Cadastrar()">Cadastrar</button>
+    </div>
+    <script src="../JS/cadastrar.js"></script>
+</body>
+</html>

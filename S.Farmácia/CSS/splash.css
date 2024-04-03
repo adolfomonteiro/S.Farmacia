@@ -1,0 +1,19 @@
+body{
+    margin-top:40vh;
+  }
+    canvas{
+      margin:auto;
+      padding:20px;
+      border:20px solid green;
+      border-top-color:transparent;
+      display:block;
+      border-radius:100%;
+      height:60px;
+      width:60px;
+      animation:adolfo 500ms infinite linear;
+    }
+    @keyframes adolfo{
+      from{
+        transform:rotate(-360deg);
+      }
+    }

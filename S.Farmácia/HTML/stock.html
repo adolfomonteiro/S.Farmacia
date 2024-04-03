@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html-- lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/projetor_icon.svg" type="image/x-icon">
+  <title>Controle Financeiro</title>
+</head>
+ <link rel="stylesheet" href="../CSS/stock.css">
+  <body>
+  <header>
+    <nav class="menu-bar">
+      <span id="menu" onclick="Mostrar()">☰</span>
+    </nav>
+    <ul id="lista">
+      <li><a href="#">Clientes</a></li>
+      <li><a href="#">Funcionários</a></li>
+      <li><a href="#">Gerente</a></li>
+      <li><a href="#">Sign Up</a></li>
+    </ul>
+  </header>
+  <div id="form">
+  <h1>Cadastro Financeiro</h1>
+  
+  <label for="nome">Nome do Produto</label>
+  <input type="text" id="nome" placeholder="Nome do Produto">
+  <label for="quantidade">Quantidade</label>
+  <input type="number" min="1" id="quantidade" placeholder="Quantidade">
+  <label for="preco">Preço</label>
+  <input type="number" min="1" id="preco" placeholder="Preço do Produo">
+  <button onclick="addProduct()">Adicionar Produto</button>
+</div>
+  <script src="../JS/stock.js"></script>
+
+</body>
+</html>
