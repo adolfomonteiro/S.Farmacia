@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/interface_icon.svg" type="image/x-icon">
+    <title>Processando...</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 35vh;
+    }
+    .circle{
+        padding: 10px;
+        margin: auto;
+        border: 20px solid black;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        border-color: #00bbff;
+        border-top-color:transparent;
+        border-bottom-color: transparent;
+        animation: adolfo 950ms linear infinite;
+    }
+    @keyframes adolfo{
+        from{
+            transform: rotate(360deg);
+            border-color: #00bbff;
+            border-left-color:dodgerblue;
+            border-right-color: dodgerblue;
+        }
+    }
+</style>
+<body onload="Processar()">
+    <div class="circle"></div>
+    <script>
+        var cont = 0
+      
+        function Processar(){
+            cont = cont+1
+          var data = new Date()
+
+          var segundo = data.getSeconds()
+        segundo = cont
+        console.log(segundo)
+
+        if(segundo == 15){
+            window.location.href = "init.html"
+        }
+            }
+        setInterval(Processar,1000)
+    </script>
+</body>
+</html>

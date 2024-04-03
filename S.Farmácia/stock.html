@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html-- lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/projetor_icon.svg" type="image/x-icon">
+  <title>Controle Financeiro</title>
+</head>
+ <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      text-align: center; 
+    }
+    label{
+      margin: auto;
+      display: block;
+      margin-top: 10px;
+    }
+    header{
+      background-color:white;
+      box-shadow: 1px 1px 12px gray;
+      padding: 10px;
+      color: #00bbff;
+      text-align: center;
+    }
+
+    #lista{
+      display: none;
+      padding: 0;
+      list-style-type: none;
+    } 
+    #lista li{
+      display: inline;
+      margin-right: 20px;
+      max-width: 240px;
+    }
+     #lista a{
+      text-decoration: none;
+      color: #00bbff;
+     }
+     #lista a:hover{
+      text-decoration: none;
+      color: #0386b5;
+     }
+    input{
+      margin-top: 10px;
+      padding: 5px;
+      border: 1px solid gainsboro;
+      border-radius: 3px;
+      width: 180px;
+    }
+    #menu{
+     font-size: 1.5em;
+     cursor: pointer;
+     color: #636363;
+      margin-left: 35rem;
+    }
+    button{
+      border-radius: 5px;
+      border: none;
+      background-color: #00bbff;
+      padding:5px;
+      color: white;
+      width: 190px;
+      margin: auto;
+      display: block;
+      margin-top: 10px;
+    }
+
+    button:hover{
+      cursor: pointer;
+      border-color:gainsboro;
+      border-radius: 5px;
+      background-color:#0386b5;
+      padding: 5px;
+      transition: 0.1s linear;
+      color: white;
+    }
+    #form{
+      margin: auto;
+      display: block;
+      width: 90%;
+      margin-top: 100px;
+    }
+  </style>
+  <body>
+  <header>
+    <nav class="menu-bar">
+      <span id="menu" onclick="Mostrar()">☰</span>
+    </nav>
+    <ul id="lista">
+      <li><a href="#">Clientes</a></li>
+      <li><a href="#">Funcionários</a></li>
+      <li><a href="#">Gerente</a></li>
+      <li><a href="#">Sign Up</a></li>
+    </ul>
+  </header>
+  <div id="form">
+  <h1>Cadastro Financeiro</h1>
+  
+  <label for="nome">Nome do Produto</label>
+  <input type="text" id="nome" placeholder="Nome do Produto">
+  <label for="quantidade">Quantidade</label>
+  <input type="number" min="1" id="quantidade" placeholder="Quantidade">
+  <label for="preco">Preço</label>
+  <input type="number" min="1" id="preco" placeholder="Preço do Produo">
+  <button onclick="addProduct()">Adicionar Produto</button>
+</div>
+  <script>
+    function Mostrar(){
+  var ul = document.getElementById("lista");
+    ul.style.display = (ul.style.display === 'none' || ul.style.display === '') ? 'block' : 'none';
+ }
+
+    function addProduct() {
+      var nome = document.getElementById('nome').value;
+      var quantidade = parseInt(document.getElementById('quantidade').value);
+      var preco = document.getElementById('preco').value;
+      var produto = {
+          nome : nome,
+          quantidade : quantidade,
+          preco : preco
+      }
+      document.getElementById('nome').value  = ""
+      document.getElementById('quantidade').value = ""
+      document.getElementById('preco').value = ""
+
+    localStorage.setItem("myData",JSON.stringify(produto))
+    }
+  </script>
+
+</body>
+</html>

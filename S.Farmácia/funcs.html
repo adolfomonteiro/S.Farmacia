@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="Adolfo AL" charset="UTF-8">
+    <meta name="viewport"  author="Adolfo Monteiro Manuel" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/setings_icon.svg" type="image/x-icon">
+    <title>Login - Funcionários</title>
+</head>
+<style>
+    body{
+        margin: auto;
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #logo{
+        border: none;
+        background-color: transparent;
+        border-radius: 50px;
+        font-size: 25px;
+        margin: auto;
+        display: block;
+        margin-top: 20px;
+    }
+    #main{
+        margin: auto;
+        display: block;
+        background-color:#00bbff;
+        padding: 120px;
+        height: 60px;
+    }
+    #card{
+        margin: auto;
+        display: block;
+        background-color: white;
+        box-shadow: 0px 0px 3px 0px;
+        padding: 30px;
+        margin-top: -250px;
+        width: 320px;
+        height: 440px;
+        border-radius: 15px;
+    }
+    #next{
+        position: relative;
+        top: 0px;
+        background-color: #00bbff;
+        color: white;
+        font-size: 15px;
+        left: 98px;
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+        margin: auto;
+        display: block;
+    }
+    #next:hover{
+        cursor: pointer;
+        background-color:#0386b5;
+        transition: 0.1s linear;
+    }
+    h3{
+        text-align: center;
+        color: #00bbff;
+        font-size: 30px;
+        top: -30px;
+        position: relative;
+    }
+    h4{
+        text-align: center;
+        font-size: 16px;
+        font-weight: 300;
+        margin: auto;
+        margin-top: -35px;
+    }
+    input{
+        margin: auto;
+        display: block;
+        margin-top: 20px;
+        padding: 10px;
+        width: 250px;
+        border: 1px solid gainsboro;
+        border-radius: 4px;
+    }
+    a{
+        color:#00bbff;
+        text-decoration: none;
+        top: 20px;
+        position: relative;
+        margin: auto;
+        left: 25px;
+    }
+    a:hover{
+        color:#0386b5;
+        transition: 0.1s linear;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div id="main"></div>
+    <div id="card">
+        <button id="logo">
+            <img src="img/setings_icon.svg" width="60" height="60" alt="">
+        </button>
+        <h3>Farmácia</h3>
+        <h4>Iniciar Sessão - Funcionários</h4>
+        <input required type="text" placeholder="Nome Completo" id="nome">
+        <input required type="email" placeholder="✉ Email" id="email">
+        <input required type="tel" placeholder="Telefone" id="telefone">
+        <input required type="password" placeholder="⚙ Senha" id="senha">
+        <a href="cadastrar.html">Criar Conta</a>
+        <button  id="next" onclick="Seguinte()">Seguinte</button>
+    </div>
+</body>
+<script>
+   function Seguinte(){
+    var nome = document.getElementById("nome").value
+    var email = document.getElementById("email").value
+    var telefone = document.getElementById("telefone").value
+    var senha = document.getElementById("senha").value
+
+    if(nome == "" && email == "" && senha =="" && telefone == ""){
+        alert("Preencha Todos os Campos vazios!")
+    }
+    else if(nome == ""){
+        alert("Coloque Nome")
+    }
+    else if(email ==""){
+        alert("Coloque Email")
+    }
+    else if(senha == ""){
+        alert("Coloque Senha")
+    }
+    else if(telefone == ""){
+        alert("Coloque Contacto")
+    }
+    else{
+    var usuario = {
+        email : email
+    }
+    document.getElementById("email").value = ""
+    document.getElementById("senha").value = ""
+
+    localStorage.setItem("userData",JSON.stringify(usuario))
+    window.location.href = "load.html"
+}
+}
+ 
+</script>
+</html>

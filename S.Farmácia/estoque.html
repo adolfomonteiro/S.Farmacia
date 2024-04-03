@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estoque</title>
+  <link rel="stylesheet" href="estoque.css">
+</head>
+<style>
+body{
+  margin:20px;
+}
+input,button{
+  margin-top:60px;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+th,td{
+  border:1px solid #ddd;
+  padding:8px;
+}
+#registo{
+  margin-top:-100px;
+  font-size:20px;
+  color:#ddd;
+  text-shadow:0 1px 1px rgba(5,0,5,0.5);
+}
+</style>
+<body>
+  <header>
+        <select id="menu">
+      <option value="nada">Cadastrar-se</option>
+      <option value="Cliente">Cliente</option>
+      <option value="Funcionário">Funcionário</option>
+      <option value="Gerente">Gerente</option>
+    </select>
+    <button id="icon">🐍</button>
+    <span style="color:green;position:relative;left:-25px;top:20px;">MIA </span>
+    <span> Farmácia</span>
+  </header>
+ <main>
+    <div class="form">
+     <input id="pesquisar" type="search" placeholder="Pesquisar" oninput="Search()">
+     <input type="text" placeholder="Produto" id="produto">
+     <input type="number" placeholder="Quantidade" id="quantidade">
+     <select id="acao">
+       <option value="Entrada">Entrada</option>
+       <option value="Saida">Saída</option>
+     </select>
+     <button onclick="Adicionar()">Adicionar</button>
+    </div>
+    </main>
+        <h1 id="registo">Registos</h1>
+        <hr>
+<table>
+  <thead>
+  <tr>
+    <th>Produto</th>
+    <th>Preço</th>
+    <th>E/S</th>
+    <th>Saldo</th>
+    <th>Acções</th>
+  </tr>
+  </thead>
+</table>
+<tbody id="stockTabela"></tbody>
+</body>
+<script src="estoque.js"></script>
+</html>
